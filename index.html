@@ -120,7 +120,94 @@
 
             </div>
         </section>
-        </main>
+        <section class="form">
+            <div>
+                <h2 class="form__header">Contact</h2>
+            </div>
+            <div>
+                <form action="https://dev.cotenfrontend.pl" method="Post" class="form__container">
+                    <p class="form__name">
+                        <input class="form__input" required type="text" placeholder="please enter your name" id="name" name="name">
+                    </p>
+
+                    <p class="form__surname">
+                        <input class="form__input" required type="text" placeholder="please enter your surname" id="surname" name="jakistam"> 
+                    </p>
+
+                    <p class="form__age">
+                        <input placeholder="put your age" class="form__input" type="number" value="25" name="age" id="age" min="0">
+                    </p>
+
+                    <p class="form__telephone">
+                        <input required class="form__input" type="tel" name="telephone" id="telephone" placeholder="please enter your phone number">
+                    </p>
+
+                    <p class="form__email">
+                        <input class="form__input" required type="email" placeholder="please enter your email" name="email">
+                    </p>
+
+                    <fieldset class="form__radio">
+                        <legend>Please choose one:</legend>
+                        <p>
+                            <label for="radio1">Option 1</label>
+                            <input type="radio" name="radio" id="radio1">
+                        </p>
+
+                        <p>
+                            <label for="radio1">Option 2</label>
+                            <input type="radio" name="radio" id="radio2">
+                        </p>
+                        
+                        <p>
+                            <label for="radio1">Option 3</label>
+                            <input type="radio" name="radio" id="radio3">
+                        </p>
+                    </fieldset>
+                    <div class="form__check--container">
+                        <p class="form__checkbox">
+                            <input type="checkbox" name="checkbox1" id="checkbox1" value="hehe">
+                            <Label for="checkbox1">Checkbox</Label>
+                        </p>
+                        <p class="form__checkbox">
+                            <input type="checkbox" name="checkbox2" id="checkbox2">
+                            <Label for="checkbox2">Checkbox</Label>
+                        </p>
+                    </div>
+
+                    <p class="form__range">
+                        <label for="ranges">range</label><br>
+                        <input type="range" name="ranges" id="ranges" min="0" max="100" step="1">
+                    </p>
+
+                    <p class="form__password">
+                        <input placeholder="enter your password" class="form__input" required type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    </p>
+
+                   
+                    <div class="form__file">
+                            <label class="form__file--label" for="file">put file</label>
+                            <input class="form__file--input" type="file" name="file" id="file" accept="image/png, image/jpeg">
+                    </div> 
+                    
+
+                    <p class="form__answear">
+                        <select class="form__input" name="select" id="select">
+                            <option value="">Please select the answer</option>
+                            <option>yes</option>
+                            <option>no</option>
+                        </select>
+                    </p>
+
+                    <p class="form__message">
+                        <textarea class="form__textarea" placeholder="please enter your message" id="message" name="message"></textarea>                    
+                    </p>
+
+                    <input class="form__button" type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+
+    
         <footer></footer>
     </div>
   </body>

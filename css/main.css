@@ -24,6 +24,7 @@ body {
         "header header header"
         "banner banner banner"
         "wrapper wrapper wrapper"
+        "form form form"
         "footer footer footer";
 }
 
@@ -50,11 +51,25 @@ body {
     font-size: 16px;
     color: #fff;
 }
+.nav__link:hover {
+    color: rgb(28,51,69);
+    animation-duration: 1s;
+    animation-name: ho; 
+}
+
+@keyframes ho {
+    from {
+        color: #fff
+    }
+    to {
+        color: rgb(28,51,69);
+    }
+}
 
 .banner {
     grid-area: banner;    
-    background: rgb(254,227,209);
-    background: radial-gradient(circle, rgba(254,227,209,1) 36%, rgba(254,254,254,0) 73%);
+    background: rgb(242,95,92);
+    background: radial-gradient(circle, rgba(242,95,92,1) 33%, rgba(204,80,77,1) 73%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,12 +83,12 @@ body {
 
 .banner__heading {
     font-size: 40px;
-    color: #f46036;
+    color: #fff;
 }
 
 .banner__paragraph {
     font-size: 20px;
-    color: #f46036;
+    color: #fff;
 }
 
 .wrapper {
@@ -83,25 +98,31 @@ body {
     flex-direction: column;
     align-items: center;
     box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 50%);
-    background: rgb(196,144,72);
-    background: radial-gradient(circle, rgba(196,144,72,1) 33%, rgba(190,138,76,1) 73%);
+    background: rgb(255,184,85);
+    background: radial-gradient(circle, rgba(255,184,85,1) 33%, rgba(255,158,60,1) 73%);
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .wrapper__header {
     max-width: 960px;
     text-align: center;
-    margin: 20px;
+    margin: 0;
+    
 }
 
 .wrapper__heading {
     font-family: 'ZCOOL QingKe HuangYou', cursive;
     font-size: 40px;
-    color: rgb(255,177,93);
-    margin: 20px 0px 5px 0px;
+    color: rgb(28,51,69);
+    margin: 0px 0px;
+    padding: 
 }
 
 .wrapper__paragraph {
     font-family: 'Lato', sans-serif;
+    color: rgb(28,51,69);
+    
 }
 
 .highlights {
@@ -121,8 +142,8 @@ body {
     /*background: rgb(255,183,81);
     background: radial-gradient(circle, rgba(255,183,81,1) 33%, rgba(255,189,113,1) 73%);*/
     border-radius: 5px; 
-    background: rgb(126,90,40);
-    background: radial-gradient(circle, rgba(126,90,40,1) 33%, rgba(117,87,51,1) 73%);
+    background: rgb(28,51,69);
+    background: radial-gradient(circle, rgba(28,51,69,1) 33%, rgba(24,43,58,1) 73%);
     padding: 5px;
     text-align: center;
 }
@@ -145,3 +166,167 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 14px;
 }
+
+.form {
+    grid-area: form;
+    background: rgb(28,51,69);
+    background: radial-gradient(circle, rgba(28,51,69,1) 33%, rgba(24,43,58,1) 73%);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.form__header {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: rgb(255,184,85);
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 15px;
+    
+}
+.form__container {
+    max-width: 960px;
+    width: 960px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 30px;
+    grid-template-areas: "name surname age"
+                        "phone email password"
+                        "range message message"
+                        "answear message message"
+                        "inputs inputs inputs"
+                        "check check file"
+                        ". submit .";
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+.form__input {
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    width: 250px;
+
+}
+
+.form__name {
+    grid-area: name;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.form__surname {
+    grid-area: surname;
+}
+
+.form__age {
+    grid-area: age;
+}
+
+.form__telephone {
+    grid-area: phone;
+}
+
+.form__email {
+    grid-area: email;
+}
+
+.form__range {
+    grid-area: range;
+}
+
+.form__radio {
+    grid-area: inputs;
+    border: none;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form__check--container {
+    grid-area: check;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form__checkbox {
+    text-align: center;
+}
+
+.form__answear {
+    grid-area: answear;
+}
+
+.form__message {
+    grid-area: message;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form__textarea {
+    width: 580px;
+    max-width: 600px;
+    height: 150px;
+    border-radius: 5px;
+    margin: 0;
+    border: none;
+}
+
+.form__button {
+    grid-area: submit;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(28,51,69,1);
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 20%);
+    color: #FFF;
+    
+    
+}
+
+.form__button:hover {
+    animation-name: colorChange;
+    animation-duration: 1s;
+    background-color: rgb(12, 85, 141);
+}
+
+@keyframes colorChange {
+    from {
+        background-color: rgba(28,51,69,1);
+    }
+
+    to {
+        background-color: rgb(12, 85, 141);
+    }
+}
+.form__file {
+    grid-area: file;
+}
+.form__file--input {
+    display: none;
+}
+
+.form__file--label {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(28,51,69,1);
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 20%);
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form__file--label:hover {
+    animation-name: colorChange;
+    animation-duration: 1s;
+    background-color: rgb(12, 85, 141);
+}
+
+
