@@ -37,12 +37,19 @@ body {
     position: relative;
 }
 
-.nav {
-    margin: 15px auto;
-    max-width: 960px;
+.nav__menu {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    max-width: 960px;
+    padding: 0;
+}
+.nav__container {
+    display: flex;
+    justify-content: center;
+}
+.nav__switcher {
+    display: none;
 }
 
 .nav__link {
@@ -50,6 +57,7 @@ body {
     text-decoration: none;
     font-size: 16px;
     color: #fff;
+    margin: 0 20px;
 }
 .nav__link:hover {
     color: rgb(28,51,69);
@@ -94,7 +102,6 @@ body {
 .wrapper {
     grid-area: wrapper;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 50%);
@@ -116,7 +123,7 @@ body {
     font-size: 40px;
     color: rgb(28,51,69);
     margin: 0px 0px;
-    padding: 
+    
 }
 
 .wrapper__paragraph {
@@ -139,8 +146,6 @@ body {
 
 .highlights__content {
     max-width: 300px;
-    /*background: rgb(255,183,81);
-    background: radial-gradient(circle, rgba(255,183,81,1) 33%, rgba(255,189,113,1) 73%);*/
     border-radius: 5px; 
     background: rgb(28,51,69);
     background: radial-gradient(circle, rgba(28,51,69,1) 33%, rgba(24,43,58,1) 73%);
@@ -210,6 +215,7 @@ body {
     box-shadow: none;
     border: none;
     width: 250px;
+    max-width: 250px;
 
 }
 
@@ -233,6 +239,10 @@ body {
 
 .form__email {
     grid-area: email;
+}
+
+.form__password {
+    grid-area: password;
 }
 
 .form__range {
@@ -268,7 +278,6 @@ body {
 }
 
 .form__textarea {
-    width: 580px;
     max-width: 600px;
     height: 150px;
     border-radius: 5px;
@@ -305,6 +314,7 @@ body {
 }
 .form__file {
     grid-area: file;
+    display: flex;
 }
 .form__file--input {
     display: none;
@@ -330,3 +340,134 @@ body {
 }
 
 
+@media screen and (max-width: 800px) {
+    body {
+        min-width: auto;
+    }
+
+    .container {
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        min-height: 50px;
+        height: auto;
+    }
+
+    .nav__switcher {
+        display: block;
+        margin-left: auto;
+        margin-right: 5%;
+        margin-top: 15px;
+        background: none;
+        border: solid 1px rgba(28,51,69,1);
+        border-radius: 2px;
+        color: rgba(28,51,69,1);
+    }
+
+    .nav__switcher:hover {
+        background-color: rgba(28,51,69,1);
+        color: #fff;
+        animation-name: switcher;
+        animation-duration: 1s;
+    }
+
+    @keyframes switcher {
+        from {
+            background: none;
+            color:  rgba(28,51,69,1);
+        }
+        to {
+            background-color:rgba(28,51,69,1);
+            color: #fff;
+        }
+    }
+
+    .nav__menu {
+        display: none;
+
+    }
+
+    .nav__menu--visible{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+
+
+    .nav__link:hover {
+        color: rgb(28,51,69);
+        animation-duration: 1s;
+        animation-name: ho; 
+    }
+
+    .wrapper__header {
+        text-align: center;
+        margin: 0;
+    }
+
+    .highlights {
+        grid-template-columns: auto;
+        grid-template-areas: 
+                "highlights__content";
+    }
+
+    .form__container {
+        width: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "name" 
+                            "surname"
+                            "age"
+                            "phone"
+                            "email"
+                            "password"
+                            "range" 
+                            "answear"
+                            "message"
+                            "inputs"
+                            "check"
+                            "file"
+                            "submit";
+        grid-row-gap: 10px;
+        font-family: 'Lato', sans-serif;
+        
+    }
+
+    .form__radio {
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }   
+
+    .form__legend {
+        margin: 0 auto;
+    }
+
+    .form__check--container {
+        grid-area: check;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form__message {
+        grid-area: message;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form__textarea {
+        border-radius: 5px;
+        margin: 0;
+        border: none;
+    }
+
+    .form__file {
+        display: flex;
+        justify-content: center;
+    }
+}

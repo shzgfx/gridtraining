@@ -11,8 +11,9 @@
   <body>
     <div class="container">
         <header class="header">
-            <nav>
-                <ul class="nav">
+            <button class="nav__switcher nav__switcher--js">☰</button>
+            <nav class="nav__container">
+                <ul class="nav__menu nav__menu--js">
                     <li><a class="nav__link" href="">Home</a></li>
                     <li><a class="nav__link" href="">About us</a></li>
                     <li><a class="nav__link" href="">Realizations</a></li>
@@ -147,7 +148,7 @@
                     </p>
 
                     <fieldset class="form__radio">
-                        <legend>Please choose one:</legend>
+                        <legend class="form__legend">Please choose one:</legend>
                         <p>
                             <label for="radio1">Option 1</label>
                             <input type="radio" name="radio" id="radio1">
@@ -201,8 +202,9 @@
                     <p class="form__message">
                         <textarea class="form__textarea" placeholder="please enter your message" id="message" name="message"></textarea>                    
                     </p>
-
-                    <input class="form__button" type="submit" value="Send">
+                    <div>
+                        <input class="form__button" type="submit" value="Send">
+                    </div>
                 </form>
             </div>
         </section>
@@ -210,5 +212,6 @@
     
         <footer></footer>
     </div>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
